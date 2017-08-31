@@ -49,6 +49,15 @@ ul,li{
     color: #fff;
     font-size: 1.46vw;
     letter-spacing: 0.146vw;
+    text-align: right;
+}
+
+.container>.backgroundImg>.localInformation > #location {
+    font-size: 1.2vw;
+}
+
+.container>.backgroundImg>.localInformation > #currentTime {
+    font-size: 1.2vw;
 }
 
 .container>.backgroundImg>.localInformation svg.location {
@@ -114,19 +123,19 @@ ul,li{
     font-weight: 700;
 }
 
-.content >ul> li .todayTemperature{
+.content >ul> li #todayTemperature{
     font-size:5.85vw;
     line-height: 1;
+    display: inline-block;
 }
 .content >ul> li .airInformation{
     font-size: 0.88vw;
-    margin-left: -1vw;
 }
-.content >ul> li .airInformation>.todayDate{
+.content >ul> li .airInformation>#todayDate{
     border-radius: 1em;
     background: rgba(151,140,130,.7);
-    padding: 0 1vw;
-    margin-right:3vw;
+    padding: .2vw 2vw;
+    margin-right: 2vw;
 }
 
 
