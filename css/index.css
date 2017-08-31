@@ -1,0 +1,159 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+ul,li{
+    list-style:none;
+}
+.wrapper {
+    background: url('https://i.loli.net/2017/08/30/59a665888bd91.jpg') 0 0 no-repeat;
+    background-size: cover;
+    height: 100%;
+    z-index: -1;
+    padding-top: 0.1px;
+}
+
+.container {
+    margin: 12vh;
+}
+
+.container>.backgroundImg {
+    background: url('https://i.loli.net/2017/08/30/59a65b4584e3d.jpg') 0 0 no-repeat;
+    background-size: cover;
+    height: 53.2vh;
+    border-top-left-radius: 0.37vw;
+    border-top-right-radius: 0.37vw;
+    position: relative;
+}
+
+.container>.backgroundImg>#inputCity {
+    position: absolute;
+    left: 2.92vw;
+    top: 2.92vw;
+    min-width: 14.6vw;
+    padding: 1.1vw;
+    font-size: 2.2vw;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: transparent;
+    z-index: 1;
+}
+
+.container>.backgroundImg>.localInformation {
+    position: absolute;
+    right: 2.92vw;
+    top: 2.92vw;
+    color: #fff;
+    font-size: 1.46vw;
+    letter-spacing: 0.146vw;
+}
+
+.container>.backgroundImg>.localInformation svg.location {
+    width: 2em;
+    height: 2em;
+    fill: currentColor;
+}
+
+.container>.backgroundImg>.titleContainer {
+    position: absolute;
+    bottom: 0vw;
+}
+.container>.backgroundImg>.titleContainer.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.container>.backgroundImg>.titleContainer>li{
+    float: left;
+    padding-bottom: 1.46vw;
+    padding-left: 2.92vw;
+}
+.container>.backgroundImg>.titleContainer>li:nth-child(1){
+    border-bottom: 0.37vw solid #f5c650;
+}
+.container>.backgroundImg>.titleContainer>li:nth-child(2){
+    border-bottom: 0.37vw solid #98a1e6;
+}
+.container>.backgroundImg>.titleContainer>li:nth-child(3){
+    border-bottom: 0.37vw solid #65d0e6;
+}
+
+.container>.backgroundImg>.titleContainer>li>span {
+    margin-right: 2em;
+    color: #89837c;
+    font-size: 1vw;
+}
+.container>.backgroundImg>.titleContainer>li>span svg{
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: -0.3em;
+    fill: currentColor;
+    margin-right: 0.5em;
+}
+.content {
+    height: 22.8vh;
+    border-bottom-left-radius: 0.37vw;
+    border-bottom-right-radius: 0.37vw;
+    background-color: rgba(255,255,255,.3);
+}
+.content > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.content >ul> li{
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    text-align: center;
+    flex: 1;
+    color: #fff;
+    font-weight: 700;
+}
+
+.content >ul> li .todayTemperature{
+    font-size:5.85vw;
+    line-height: 1;
+}
+.content >ul> li .airInformation{
+    font-size: 0.88vw;
+    margin-left: -1vw;
+}
+.content >ul> li .airInformation>.todayDate{
+    border-radius: 1em;
+    background: rgba(151,140,130,.7);
+    padding: 0 1vw;
+    margin-right:3vw;
+}
+
+
+.content >ul>.today{
+    flex: 2;
+}
+
+.weatherIcon>svg.cloudy{
+    width: 5.85vw;
+    height: 5.85vw;
+    fill:#fff;
+    vertical-align: -0.1em;
+}
+
+.content >ul>.forecast{
+    font-size: 1vw;
+}
+.content >ul>.forecast svg{
+    width: 2.2vw;
+    height: 2.2vw;
+    fill:#fff;
+    margin-bottom: 0.66vw;
+    margin-top: 0.66vw;
+}
+.content >ul>.forecast>.futureDate{
+    margin: 0 auto;
+    width: 4vw;
+    border-radius: 1em;
+    background:rgba(151,140,130,.7);
+}

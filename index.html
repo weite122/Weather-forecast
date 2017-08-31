@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="backgroundImg">
+                <input type="text" placeholder="请输入城市" id="inputCity">
+                <div class="localInformation">
+                    <svg class="location">
+                        <use xlink:href="#icon-location"></use>
+                    </svg>
+                    <div id="location">city</div>
+                    <div id="currentTime">time</div>
+                </div>
+                <ul class="titleContainer clearfix">
+                    <li class="weatherContainer">
+                        <span class="weather"><svg class="weather">
+                                <use xlink:href="#icon-taiyang"></use>
+                            </svg>WEATHER</span>
+                    </li>
+                    <li class="newsContainer">
+                        <span class="news"><svg class="news">
+                                <use xlink:href="#icon-news"></use>
+                            </svg>NEWS&EVENTS</span>
+                    </li>
+                    <li class="galleryContainer">
+                        <span class="gallery"><svg class="gallery">
+                                <use xlink:href="#icon-gallery"></use>
+                            </svg>GALLERY(30)</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="content">
+                <ul>
+                    <li class="today">
+                        <div class="todayInformation">
+                            <div class="todayTemperature">82° 
+                                <span class="weatherIcon">
+                                        <svg class="cloudy">
+                                            <use xlink:href="#icon-cloudy"></use>
+                                        </svg>
+                                    </span>
+                            </div>
+                            <div class="airInformation">
+                                <span class="todayDate">MONDAY 27 th</span>
+                                <span class="windSpeed">4mph/</span>
+                                <span class="pm25">82°</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="forecast">
+                        <div class="futureDate">THU</div>
+                        <svg class="cloudy">
+                            <use xlink:href="#icon-cloudy"></use>
+                        </svg>
+                        <div class="futureTemperature">82°</div>
+                    </li>
+                    <li class="forecast">
+                        <div class="futureDate">Thu</div>
+                        <svg class="cloudy">
+                            <use xlink:href="#icon-cloudy"></use>
+                        </svg>
+                        <div class="futureTemperature">82°</div>
+                    </li>
+                    <li class="forecast">
+                        <div class="futureDate">Thu</div>
+                        <svg class="cloudy">
+                            <use xlink:href="#icon-cloudy"></use>
+                        </svg>
+                        <div class="futureTemperature">82°</div>
+                    </li>  
+                    <li class="forecast">
+                        <div class="futureDate">Thu</div>
+                        <svg class="cloudy">
+                            <use xlink:href="#icon-cloudy"></use>
+                        </svg>
+                        <div class="futureTemperature">82°</div>
+                    </li>
+                    <li class="forecast">
+                        <div class="futureDate">Thu</div>
+                        <svg class="cloudy">
+                            <use xlink:href="#icon-cloudy"></use>
+                        </svg>
+                        <div class="futureTemperature">82°</div>
+                    </li>
+                    <li class="forecast">
+                        <div class="futureDate">Thu</div>
+                        <svg class="cloudy">
+                            <use xlink:href="#icon-cloudy"></use>
+                        </svg>
+                        <div class="futureTemperature">82°</div>
+                    </li>                                      
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://at.alicdn.com/t/font_401172_i18ka3k5mj2fyldi.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
