@@ -1,5 +1,5 @@
 (function(){
-    const host = 'http://weixin.jirengu.com'
+    const host = 'https://weixin.jirengu.com'
     const daytimeSeperator = 12
     const enterKey = 13
     const dayMaps ={
