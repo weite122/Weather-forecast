@@ -20,6 +20,46 @@
         "6": "Saturday",
         "7": "Sunday",
     }
+
+    const weatherMaps = {
+        "晴": "#icon-sun",
+        "多云": "#icon-cloudy",
+        "晴间多云": "#icon-partlyCloudy",
+        "大部多云": "#icon-partlyCloudy",
+        "阴": "#icon-overcast",
+        "阵雨": "#icon-heavenRain",
+        "雷阵雨": "#icon-strongStorms",
+        "雷阵雨伴有冰雹": "#icon-strongStorms",
+        "小雨": "#icon-lightRain",
+        "中雨": "#icon-lightRain",
+        "大雨": "#icon-heavenRain",
+        "暴雨": "#icon-heavenRain",
+        "大暴雨": "#icon-heavenRain",
+        "特大暴雨": "#icon-heavenRain",
+        "冻雨": "#icon-hail",
+        "雨夹雪": "#icon-rainhail",
+        "阵雪": "#icon-lightsnow",
+        "小雪": "#icon-lightsnow",
+        "中雪": "#icon-snow",
+        "大雪": "#icon-snow",
+        "暴雪": "#icon-snow",
+        "浮尘": "#icon-Duststorm",
+        "扬沙": "#icon-Duststorm",
+        "沙尘暴": "#icon-Duststorm",
+        "强沙尘暴": "#icon-Duststorm",
+        "雾": "#icon-fog",
+        "霾": "#icon-haze",
+        "风": "#icon-windy",
+        "大风": "#icon-tornado",
+        "飓风": "#icon-tornado",
+        "热带风暴": "#icon-tornado",
+        "龙卷风": "#icon-tornado",
+        "冷": "#icon-overcast",
+        "热": "#icon-taiyang",
+    }
+
+
+   
     $.ajax(`${host}/weather/`)
      .done((info)=>{
         console.log(info);
@@ -30,6 +70,8 @@
         showWeather(weather)
      })
 
+
+    
     function formatTime(date){
         let currentHours = date.getHours()
         let currentMinutes = date.getMinutes()
@@ -57,11 +99,6 @@
 
     setupTime()
 
-    // function getImgUrl(code) {
-    //     return `http://weixin.jirengu.com/images/weather/code/${code}.png`;
-    // }
-
-
     function setUnit(unit){
         let unitNode = document.createElement('sup')
         unitNode.textContent = unit
@@ -71,27 +108,22 @@
         let todayInformation = weather.now
         let todayTemperatureNode = document.getElementById('todayTemperature')
         todayTemperatureNode.textContent = todayInformation.temperature + '°'
-
-        // let todayImg = document.getElementById('todayImg')
-        // todayImg.src = getImgUrl(todayInformation.code)
-
-
         let todayWindNode = document.getElementById('todayWind')
-        todayWindNode.textContent = parseInt(todayInformation['wind_speed']) + 'mph '
-
+        todayWindNode.textContent = ~~(todayInformation['wind_speed']) + 'mph '
         let todayPm25Node = document.getElementById('todayPm25')
         let airQuality = todayInformation['air_quality']
         let city = airQuality['city']
-        
         todayPm25Node.textContent = city['pm25'] + 'μg/m'
         todayPm25Node.appendChild(setUnit(3))
-    
+
+
+        let todayWeatherNode = document.querySelector('.todayweatherIcon >use')
+        let weatherIcon = todayInformation['text']
+        todayWeatherNode.href.baseVal = weatherMaps[weatherIcon]
 
         let futures = weather.future
         let futureDates = document.querySelectorAll('.futureDate')
-        // let futureImgs = document.querySelectorAll('.futureImg')
         let futureTemperatures = document.querySelectorAll('.futureTemperature')
-
         futureDates.forEach((futureDate,index) =>{
             let perDay = futures[index+4]
             futureDate.textContent = dayMaps[perDay.day]
@@ -99,5 +131,8 @@
             let futureTemperature = futureTemperatures[index]
             futureTemperature.textContent = perDay.high + '°' + '~'+ perDay.low + '°'
         })
+    }
+    function showWeatherIcon(){
+
     }
 })()

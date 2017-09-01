@@ -143,7 +143,7 @@ ul,li{
     flex: 2;
 }
 
-.weatherIcon>svg.cloudy{
+.today>.todayInformation>span>svg.todayweatherIcon{
     width: 5.85vw;
     height: 5.85vw;
     fill:#fff;
