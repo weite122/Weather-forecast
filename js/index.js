@@ -1,7 +1,7 @@
 (function(){
     const host = 'https://weixin.jirengu.com'
     const daytimeSeperator = 12
-    const enterKey = 13
+    const enterKey = 13//判断是否为回车键
     const dayMaps ={
         "周一": "Mon",
         "周二": "Tue",
@@ -61,17 +61,36 @@
 
    
     $.ajax(`${host}/weather/`)
-     .done((info)=>{
-        console.log(info);
-        let weather = info.weather[0];
-        let myLocation = weather['city_name'];
-        let localNode = document.getElementById('location');
-        localNode.textContent = myLocation;
+     .done((information)=>{
+        console.log(information);
+        let weather = information.weather[0];
+        showLocation(weather)
         showWeather(weather)
      })
 
+    function showLocation(weather){
+        let myLocation = weather['city_name'];
+        let localNode = document.getElementById('location');
+        localNode.textContent = myLocation;
+    }
 
-    
+    document.addEventListener('keydown',(event)=>{
+        if(event.keyCode === enterKey){
+            let inputNode = document.getElementById('inputCity')
+            let userInput = inputNode.value
+            $.ajax(`${host}/weather/cityid?location=${userInput}`)
+            .done((res) => {
+                let matchedCity = res.results[0];
+                let cityId = matchedCity.id;
+                $.ajax(`${host}/weather/now?cityid=${cityId}`)
+                    .done((weatherInformation) => {
+                        let weather = weatherInformation.weather[0];
+                        showWeather(weather)
+                        showLocation(weather)
+                  })
+             })
+        }
+    })
     function formatTime(date){
         let currentHours = date.getHours()
         let currentMinutes = date.getMinutes()
@@ -133,20 +152,9 @@
             let futureTemperature = futureTemperatures[index]
             futureTemperature.textContent = perDay.high + '°' + '~'+ perDay.low + '°'
             let futureWeather =  futureWeathers[index]
-           
             let matches = perDay.text.match("^([\\u4e00-\\u9fa5]+/)([\\u4e00-\\u9fa5]+)")[2]
-
             futureWeather.href.baseVal = weatherMaps[matches]
-            console.log(futureWeather.textContent)
-            
-            
         })
-
-
-
     }
 
-    function showWeatherIcon(){
-
-    }
 })()
