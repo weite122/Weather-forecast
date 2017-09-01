@@ -121,17 +121,31 @@
         let weatherIcon = todayInformation['text']
         todayWeatherNode.href.baseVal = weatherMaps[weatherIcon]
 
+
+
         let futures = weather.future
         let futureDates = document.querySelectorAll('.futureDate')
         let futureTemperatures = document.querySelectorAll('.futureTemperature')
+        let futureWeathers = document.querySelectorAll('.weatherIcon > use')
         futureDates.forEach((futureDate,index) =>{
             let perDay = futures[index+4]
             futureDate.textContent = dayMaps[perDay.day]
-            // let futureImg = getImgUrl(perDay.code1)
             let futureTemperature = futureTemperatures[index]
             futureTemperature.textContent = perDay.high + '°' + '~'+ perDay.low + '°'
+            let futureWeather =  futureWeathers[index]
+           
+            let matches = perDay.text.match("^([\\u4e00-\\u9fa5]+/)([\\u4e00-\\u9fa5]+)")[2]
+
+            futureWeather.href.baseVal = weatherMaps[matches]
+            console.log(futureWeather.textContent)
+            
+            
         })
+
+
+
     }
+
     function showWeatherIcon(){
 
     }
