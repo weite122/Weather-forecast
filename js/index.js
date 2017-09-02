@@ -62,6 +62,7 @@
    
     $.ajax(`${host}/weather/`)
      .done((information)=>{
+         console.log(information)
         let weather = information.weather[0];
         showLocation(weather)
         showWeather(weather)
@@ -151,7 +152,9 @@
             let futureTemperature = futureTemperatures[index]
             futureTemperature.textContent = perDay.high + '°' + '~'+ perDay.low + '°'
             let futureWeather =  futureWeathers[index]
-            let matches = perDay.text.match("^([\\u4e00-\\u9fa5]+/)([\\u4e00-\\u9fa5]+)")[2]
+            console.log(futureWeather)
+            let matches = perDay.text.match("^(([\\u4e00-\\u9fa5]+)/)([\\u4e00-\\u9fa5]+)")[2]
+            // console.log(matches)
             futureWeather.href.baseVal = weatherMaps[matches]
         })
     }
