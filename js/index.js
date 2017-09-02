@@ -62,10 +62,11 @@
    
     $.ajax(`${host}/weather/`)
      .done((information)=>{
-         console.log(information)
         let weather = information.weather[0];
         showLocation(weather)
         showWeather(weather)
+     }).fail(function(){
+            alert('API抽风,请过5分钟再来╮(╯▽╰)╭')
      })
 
     function showLocation(weather){
