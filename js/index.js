@@ -62,7 +62,6 @@
    
     $.ajax(`${host}/weather/`)
      .done((information)=>{
-        console.log(information);
         let weather = information.weather[0];
         showLocation(weather)
         showWeather(weather)

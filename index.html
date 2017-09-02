@@ -23,28 +23,25 @@
                 </div>
                 <ul class="titleContainer clearfix">
                     <li class="weatherContainer active">
-                        <span class="weather"><svg class="weather">
+                        <span><svg class="weatherIcon">
                                 <use xlink:href="#icon-taiyang"></use>
-                            </svg></span>
-                            WEATHER
+                            </svg></span> WEATHER
                     </li>
                     <li class="newsContainer">
-                        <span class="news"><svg class="news">
-                                <use xlink:href="#icon-news"></use>
-                            </svg></span>
-                        SUGGESTION
+                        <span><svg class="suggestionIcon">
+                                <use xlink:href="#icon-suggestion"></use>
+                            </svg></span> SUGGESTION
                     </li>
-                    <li class="galleryContainer">
-                        <span class="gallery"><svg class="gallery">
-                                <use xlink:href="#icon-gallery"></use>
-                            </svg></span>
-                            NEWS&EVENTS
+                    <li>
+                        <span><svg class="newsIcon">
+                                <use xlink:href="#icon-news"></use>
+                            </svg></span> NEWS&EVENTS
                     </li>
                 </ul>
             </div>
             <div class="content">
                 <ul class="tabContent">
-                    <li class="weatherContent active"> 
+                    <li class="weatherContent active">
                         <ul>
                             <li class="today">
                                 <div class="todayInformation">
@@ -54,9 +51,9 @@
                                             <use xlink:href=""></use>
                                         </svg>
                                     </span>
-        
+
                                     <div class="airInformation">
-                                        <span id="todayDate">MONDAY 27 th</span>
+                                        <span id="todayDate"></span>
                                         <span id="todayWind"></span>
                                         <span id="todayPm25"></span>
                                     </div>
@@ -104,11 +101,46 @@
                                 </svg>
                                 <div class="futureTemperature"></div>
                             </li>
-                         </ul>
+                        </ul>
                     </li>
                     <li class="suggestionContent">
-                        <ul>
-                           222 
+                        <ul class="suggestion">
+                            <li>
+                                <svg class="carWashing">
+                                    <use xlink:href="#icon-carWashing"></use>
+                                </svg>
+                                <span></span>
+                            </li>
+                            <li>
+                                <svg class="dressing">
+                                    <use xlink:href="#icon-dressing"></use>
+                                </svg>
+                                <span></span>
+                            </li>
+                            <li>
+                                <svg class="preventionFlu">
+                                    <use xlink:href="#icon-preventionFlu"></use>
+                                </svg>
+                                <span></span>
+                            </li>
+                            <li>
+                                <svg class="sport">
+                                    <use xlink:href="#icon-sport"></use>
+                                </svg>
+                                <span></span>
+                            </li>
+                            <li>
+                                <svg class="travel">
+                                    <use xlink:href="#icon-travel"></use>
+                                </svg>
+                                <span></span>
+                            </li>
+                            <li>
+                                <svg class="skinProtection">
+                                    <use xlink:href="#icon-skinProtection"></use>
+                                </svg>
+                                <span></span>
+                            </li>
                         </ul>
                     </li>
                     <li class="newsContent">
@@ -119,9 +151,10 @@
         </div>
     </div>
     <script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="//at.alicdn.com/t/font_401172_3bzyylctklw61or.js"></script>
+    <script src="//at.alicdn.com/t/font_401172_vh2dykg7ujtt9.js"></script>
     <script src="./js/index.js"></script>
     <script src="./js/tab.js"></script>
+    <script src="./js/suggestion.js"></script>
 
 </body>
 

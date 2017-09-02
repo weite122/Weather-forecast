@@ -176,3 +176,44 @@ ul,li{
     border-radius: 1em;
     background:rgba(151,140,130,.7);
 }
+
+.suggestion {
+    padding-top: 2vw;
+    padding-left: 2vw;
+    display: flex;
+}
+.suggestion > li {
+    font-size: 1vw;
+    font-weight: 700;
+    margin-bottom: .5vw;
+    margin-right: 1.5vw;
+    color: #483c3c;
+}
+
+.suggestion > li > svg{
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: -0.3em;
+    margin-right: 0.5em;
+}
+.suggestion > li:nth-child(1) > svg{
+    fill: #de1212;
+}
+.suggestion > li:nth-child(2) > svg{
+    fill: #FF5722;
+}
+
+.suggestion > li:nth-child(3) > svg{
+    fill: #FFC107;
+}
+
+.suggestion > li:nth-child(4) > svg{
+    fill: #4CAF50;
+}
+
+.suggestion > li:nth-child(5) > svg{
+    fill: #03A9F4;
+}
+.suggestion > li:nth-child(6) > svg{
+    fill: #62166f;
+}

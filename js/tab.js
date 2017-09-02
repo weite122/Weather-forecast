@@ -10,10 +10,7 @@
                 titleList[i].classList.remove('active')
             }
         clickNode.classList.add('active')
-        
         let index = [].indexOf.call(titleList,clickNode)
-
-
         for(let i = 0;i < contentList.length;i++){
             contentList[i].classList.remove('active')
         }
