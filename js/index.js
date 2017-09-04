@@ -153,7 +153,6 @@
             let futureTemperature = futureTemperatures[index]
             futureTemperature.textContent = perDay.high + '°' + '~'+ perDay.low + '°'
             let futureWeather =  futureWeathers[index]
-            console.log(futureWeather)
             let matches = perDay.text.match("^(([\\u4e00-\\u9fa5]+)/)([\\u4e00-\\u9fa5]+)")[2]
             // console.log(matches)
             futureWeather.href.baseVal = weatherMaps[matches]

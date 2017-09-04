@@ -182,7 +182,7 @@ ul,li{
     padding-left: 2vw;
     display: flex;
 }
-.suggestion > li {
+.suggestion > li{
     font-size: 1vw;
     font-weight: 700;
     margin-bottom: .5vw;
@@ -216,4 +216,22 @@ ul,li{
 }
 .suggestion > li:nth-child(6) > svg{
     fill: #62166f;
+}
+
+.news {
+    padding-top: 2vw;
+    width: 90%;
+    margin: 0 auto;
+}
+.news > li{
+    float: left;
+    width: 33%;
+    font-size: 1vw;
+    font-weight: 700;
+    margin-bottom: 1vw;
+    color: #483c3c;
+}
+.news > li > a{
+    color: inherit;
+    text-decoration: none;
 }
