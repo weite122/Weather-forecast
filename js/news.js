@@ -12,7 +12,7 @@
         }
     }).done(function (ret) {
         if (ret && ret.status && ret.status.code === "0") {
-            console.log(ret.data)
+            // console.log(ret.data)
             let items = ret.data
             showNews(items)
         } else {

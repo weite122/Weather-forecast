@@ -81,17 +81,26 @@
             let userInput = inputNode.value
             $.ajax(`${host}/weather/cityid?location=${userInput}`)
             .done((res) => {
-                let matchedCity = res.results[0];
-                let cityId = matchedCity.id;
-                $.ajax(`${host}/weather/now?cityid=${cityId}`)
-                    .done((weatherInformation) => {
-                        let weather = weatherInformation.weather[0];
-                        showWeather(weather)
-                        showLocation(weather)
-                  })
+                if(userInput === 'hangzhou'){
+                    let matchedCity = res.results[2]
+                    showCity(matchedCity)
+                }else{
+                    let matchedCity = res.results[0]
+                    showCity(matchedCity)
+                }
              })
         }
     })
+
+    function showCity(matchedCity){
+        let cityId = matchedCity.id;
+        $.ajax(`${host}/weather/now?cityid=${cityId}`)
+        .done((weatherInformation) => {
+            let weather = weatherInformation.weather[0];
+            showWeather(weather)
+            showLocation(weather)
+      })
+    }
     function formatTime(date){
         let currentHours = date.getHours()
         let currentMinutes = date.getMinutes()
