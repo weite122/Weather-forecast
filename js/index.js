@@ -651,8 +651,7 @@
     encode_str[472] = "zui	最嘴醉罪堆咀觜蕞厜嗺噿嫢嶉嶊嶵摧撮晬朘枠栬槯樶檇檌欈濢璻睟祽稡穝絊纗羧脧蟕辠酔酨酻鋷錊雋";
     encode_str[473] = "zun	尊遵鳟撙樽僎僔噂墫奠嶟拵捘捽栫瀳繜罇袸譐跧踆蹲銌鐏鱒鶎鷷";
     encode_str[474] = "zuo	做作坐左座昨凿琢撮佐笮酢唑祚胙怍阼柞乍侳咗岝岞挫捽柮椊砟秨稓筰糳繓苲莋葃葄蓙袏諎醋鈼鑿飵嘬阝";    
-    function TranslateToDiv(code, ctl)
-    {
+    function TranslateToDiv(code, ctl) {
         var len = code.length;
         var result = "";
         for (var i = 0; i < len; i++)
@@ -669,8 +668,7 @@
     }
     
     
-    function TranslateChar(chr)
-    {
+    function TranslateChar(chr) {
         var result = new Array();
         var idx = 0;
         for (var i = 0; i < encode_str.length; i++)
