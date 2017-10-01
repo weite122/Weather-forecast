@@ -1,0 +1,24 @@
+{
+  "name": "weather-foreast",
+  "version": "1.0.0",
+  "description": "[效果预览](https://weite122.github.io/Weather-forecast/index.html):",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weite122/Weather-forecast.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/weite122/Weather-forecast/issues"
+  },
+  "homepage": "https://github.com/weite122/Weather-forecast#readme",
+  "devDependencies": {
+    "webpack": "^3.6.0",
+    "webpack-merge": "^4.1.0"
+  }
+}
