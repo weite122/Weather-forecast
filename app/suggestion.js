@@ -6,12 +6,20 @@ let Suggestions = (function(){
     _Suggestions.prototype.getData = function(){
         let _this = this
         const host = 'https://weixin.jirengu.com'
-        $.ajax(`${host}/weather/`)
-        .done((information)=>{
-           let weather = information.weather[0];
-           let suggestions = weather.today.suggestion
-           this.showSuggestion(suggestions)
-        })
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET', `${host}/weather/`, true)
+        xhr.onload = function(){
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                let information = JSON.parse(xhr.responseText)
+                let weather = information.weather[0]
+                let suggestions = weather.today.suggestion
+                _this.showSuggestion(suggestions)
+            } 
+        }
+        xhr.onerror = function(){
+            alert('获取数据失败')
+        }
+        xhr.send() 
     } 
 
     _Suggestions.prototype.showSuggestion = function (suggestions){

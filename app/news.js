@@ -8,6 +8,8 @@ let LoadNews = (function(){
         this.currentPage = 1
         this.perPageCount = 9
     }
+
+
     _LoadNews.prototype.getData = function(){
         let _this = this
         $.ajax({
@@ -20,6 +22,7 @@ let LoadNews = (function(){
                 page: _this.currentPage
             }
         }).done(function (ret) {
+            console.log(ret)
             if (ret && ret.status && ret.status.code === "0") {
                 let items = ret.data
                 _this.showNews(items)
@@ -28,7 +31,10 @@ let LoadNews = (function(){
                 console.log('get error data')
             }
         })
+   
     }
+
+
 
 
     _LoadNews.prototype.showNews = function (items) {

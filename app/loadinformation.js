@@ -545,15 +545,21 @@ let LoadInformation = (function () {
     }
 
     _LoadInformation.prototype.getData = function () {
-        var _this = this
-        $.ajax(`${this.host}/weather/`)
-            .done((information) => {
-                let weather = information.weather[0];
+        let _this = this
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET', `${this.host}/weather/`, true)
+        xhr.onload = function(){
+            if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+                let information = JSON.parse(xhr.responseText)
+                let weather = information.weather[0]
                 _this.showLocation(weather)
                 _this.showWeather(weather)
-            }).fail(function () {
-                alert('API抽风,请过5分钟再来╮(╯▽╰)╭')
-            })
+            } 
+        }
+        xhr.onerror = function(){
+            alert('API抽风,请过5分钟再来╮(╯▽╰)╭')
+        }
+        xhr.send()    
     }
 
 
@@ -571,15 +577,11 @@ let LoadInformation = (function () {
             if (event.keyCode === this.enterKey) {
                 let inputNode = document.getElementById('inputCity')
                 let userInput = inputNode.value
-                console.log(userInput)
                 let txtPinYin = _this.TranslateToDiv(userInput, ' ')
                 $.ajax(`${this.host}/weather/cityid?location=${txtPinYin}`)
                     .done((res) => {
                         res.results.map(function (item, index) {
-                            console.log(item.name)
-                            console.log(txtPinYin)
                             if (item.name == userInput) {
-                                console.log(index)
                                 let matchedCity = res.results[index]
                                 _this.showCity(matchedCity)
                             }
