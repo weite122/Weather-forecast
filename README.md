@@ -14,5 +14,5 @@
 - 点击新闻可以查看详细信息
 
 ### 相关技术：
-- 整个页面制作过程中使用了 HTML, CSS, 原生JavaScript, JQuery, Ajax 等技术
+- 整个页面制作过程中使用了 HTML, CSS, 原生JavaScript, JQuery, Ajax,Webpack 等技术
 - 后台数据使用了两个API,一个是[天气API](https://weixin.jirengu.com/weather),一个是[新闻API](https://platform.sina.com.cn/slide/album_tech)
