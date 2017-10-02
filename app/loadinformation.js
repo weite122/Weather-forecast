@@ -614,7 +614,8 @@ let LoadInformation = (function () {
     _LoadInformation.prototype.formatDate = function (date) {
         let currentDay = this.weekMaps[date.getDay()]
         let currentDate = date.getDate()
-        return currentDates = `${currentDay} ${currentDate}`
+        let currentDates = `${currentDay} ${currentDate}`
+        return currentDates
     }
 
     _LoadInformation.prototype.setupTime = function () {
@@ -710,5 +711,5 @@ let LoadInformation = (function () {
 
 
 })()
-    LoadInformation.init()
-    // module.exports = LoadInformation
+    // LoadInformation.init()
+    module.exports = LoadInformation

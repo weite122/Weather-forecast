@@ -55,5 +55,5 @@ let LoadNews = (function(){
         }
     }
 })()
-LoadNews.init()
-// module.exports = LoadNews
+// LoadNews.init()
+module.exports = LoadNews

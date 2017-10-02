@@ -34,5 +34,5 @@ let Tab = (function(){
     }
 })()
 
-Tab.init()
-// module.exports = Tab
+// Tab.init()
+module.exports = Tab

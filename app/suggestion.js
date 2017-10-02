@@ -34,5 +34,5 @@ let Suggestions = (function(){
     }
 })()
 
-Suggestions.init()
-// module.exports = Suggestions
+// Suggestions.init()
+module.exports = Suggestions
